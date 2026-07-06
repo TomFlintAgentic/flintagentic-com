@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flint Agentic</title>
+  <meta name="description" content="AI automation agents for small businesses, built by Tom Flint." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?display=swap&family=Roboto:ital,wght@0,500;0,700&family=Inter:ital,wght@0,300;0,400;0,500;0,700" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="page">
+
+    <section class="hero">
+      <div class="avatar">FA</div>
+      <h1>Smart AI Automation, Built by a Human Who's Done the Job</h1>
+      <p class="tagline">Agentic AI systems for small businesses — lead capture, enquiry handling, and custom automation, designed and shipped by one person.</p>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p class="body-copy">{{ about_me }}</p>
+    </section>
+
+    <section class="agents">
+      <h2>Agents Built So Far</h2>
+      <div class="agent-grid">
+        {% for agent in agents %}
+        <div class="agent-card">
+          <h3>{{ agent.name }}</h3>
+          <p class="body-copy">{{ agent.description }}</p>
+          <a class="agent-link" href="{{ agent.repo_url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ask-flint">
+      <h2>Ask Flint</h2>
+      <p class="tagline">Curious about a service, my background, or want to get in touch? Ask below.</p>
+      <div class="chat-box">
+        <div class="chat-messages" id="chatMessages"></div>
+        <form class="chat-form" id="chatForm">
+          <input type="text" id="chatInput" placeholder="Ask Flint something..." autocomplete="off" required />
+          <button type="submit" id="chatSend">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="news">
+      <h2>News &amp; Updates</h2>
+      <div class="news-list">
+        {% for item in news %}
+        <div class="news-item">
+          <span class="news-date">{{ item.date }}</span>
+          <h3>{{ item.title }}</h3>
+          <p class="body-copy">{{ item.summary }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <ul class="icon-row">
+        <li>
+          <a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 40 40"><path d="M12.1,13.8v19.1H5.7V13.8C5.7,13.8,12.1,13.8,12.1,13.8z M12.5,7.9c0,0.9-0.3,1.7-1,2.4c-0.7,0.6-1.5,0.9-2.6,0.9h0 c-1.1,0-1.9-0.3-2.5-0.9c-0.6-0.6-1-1.4-1-2.4c0-1,0.3-1.7,1-2.4S7.9,4.6,9,4.6s1.9,0.3,2.6,0.9S12.5,6.9,12.5,7.9z M35,22v11h-6.4 V22.7c0-1.4-0.3-2.4-0.8-3.2c-0.5-0.8-1.3-1.1-2.4-1.1c-0.8,0-1.5,0.2-2,0.7c-0.5,0.4-1,1-1.2,1.7c-0.1,0.4-0.2,0.9-0.2,1.6v10.7 h-6.4c0-5.1,0-9.3,0-12.5s0-5.1,0-5.7l0-0.9H22v2.8h0c0.3-0.4,0.5-0.8,0.8-1.1c0.3-0.3,0.6-0.6,1.1-1c0.5-0.4,1-0.6,1.7-0.8 c0.7-0.2,1.4-0.3,2.2-0.3c2.2,0,4,0.7,5.3,2.2C34.4,17,35,19.1,35,22L35,22z" /></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:{{ site.email }}" aria-label="Email">
+            <svg viewBox="0 0 40 40"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z" /></svg>
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 40 40"><path d="M24.9,21.9c0.2,0,0.9,0.3,2.1,1c1.2,0.6,1.9,1,1.9,1.1c0,0.1,0,0.2,0,0.3c0,0.5-0.1,1-0.4,1.6c-0.2,0.6-0.7,1-1.5,1.4 s-1.5,0.6-2.2,0.6c-0.8,0-2.2-0.4-4.1-1.3c-1.4-0.7-2.6-1.5-3.7-2.6c-1-1.1-2.1-2.4-3.2-4c-1-1.5-1.6-3-1.5-4.2v-0.2 c0-1.3,0.6-2.5,1.6-3.4c0.3-0.3,0.7-0.5,1.1-0.5c0.1,0,0.2,0,0.4,0c0.2,0,0.3,0,0.4,0c0.3,0,0.5,0,0.6,0.1c0.1,0.1,0.2,0.3,0.3,0.6 c0.1,0.3,0.4,0.9,0.7,1.9S18,16,18,16.1c0,0.3-0.2,0.7-0.7,1.2c-0.5,0.5-0.7,0.9-0.7,1c0,0.1,0,0.2,0.1,0.3c0.5,1.1,1.2,2,2.2,3 c0.8,0.8,1.9,1.5,3.3,2.2c0.2,0.1,0.3,0.2,0.5,0.2c0.2,0,0.6-0.4,1.2-1.1S24.7,21.9,24.9,21.9L24.9,21.9z M20.5,33.4 c1.8,0,3.6-0.4,5.3-1.1c1.7-0.7,3.1-1.7,4.4-2.9c1.2-1.2,2.2-2.7,2.9-4.4c0.7-1.7,1.1-3.4,1.1-5.3c0-1.8-0.4-3.6-1.1-5.3 c-0.7-1.7-1.7-3.1-2.9-4.4s-2.7-2.2-4.4-2.9s-3.4-1.1-5.3-1.1c-1.8,0-3.6,0.4-5.3,1.1s-3.1,1.7-4.4,2.9c-1.2,1.2-2.2,2.7-2.9,4.4 c-0.7,1.7-1.1,3.4-1.1,5.3c0,2.9,0.9,5.6,2.6,8l-1.7,5.1l5.3-1.7C15.3,32.6,17.8,33.4,20.5,33.4z M20.5,3.4c2.2,0,4.3,0.4,6.3,1.3 s3.8,2,5.2,3.5c1.5,1.5,2.6,3.2,3.5,5.2c0.9,2,1.3,4.1,1.3,6.3c0,2.2-0.4,4.3-1.3,6.3s-2,3.8-3.5,5.2c-1.5,1.5-3.2,2.6-5.2,3.5 s-4.1,1.3-6.3,1.3c-2.8,0-5.5-0.7-7.9-2L3.5,37l3-8.8c-1.6-2.6-2.3-5.4-2.3-8.4c0-2.2,0.4-4.3,1.3-6.3s2-3.8,3.5-5.2 s3.2-2.6,5.2-3.5S18.2,3.4,20.5,3.4z" /></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="footer-note">&copy; Flint Agentic</p>
+    </footer>
+
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
