@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Lead Handler",
+    "repo_url": "https://github.com/TomFlintAgentic/lead-agent",
+    "description": "Captures and spam-filters enquiries from the flintagentic.co.uk contact form, logs genuine leads to a spreadsheet, and pushes an instant phone notification the moment a real prospect gets in touch."
+  },
+  {
+    "name": "Sentinel AML",
+    "repo_url": "https://github.com/TomFlintAgentic/sentinel-aml",
+    "description": "An agentic anti-money-laundering investigator. It works compliance alerts itself — running OFAC sanctions screening and Companies House lookups — then produces a structured decision, confidence score and audit-ready narrative on a web dashboard."
+  },
+  {
+    "name": "FAQ Agent",
+    "repo_url": "https://github.com/TomFlintAgentic/faq",
+    "description": "A CrewAI-powered customer service agent that answers strictly from a defined knowledge base and hands off anything outside it to a human, so it never invents an answer."
+  }
+]
