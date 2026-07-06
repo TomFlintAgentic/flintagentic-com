@@ -2,7 +2,7 @@
 # Edit SYSTEM_PROMPT to change tone, scope, or contact-capture phrasing —
 # no other code needs to change.
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-haiku-4-5-20251001"
 MAX_TOKENS = 400
 TEMPERATURE = 0.6
 
