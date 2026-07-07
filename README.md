@@ -10,10 +10,11 @@ deployed to Render — same pattern as [lead-agent](https://github.com/TomFlintA
 flintagentic-com/
 ├── app/
 │   ├── main.py            # FastAPI app — routes, page rendering, /api/chat
-│   ├── chat_config.py      # Ask Flint system prompt + tunables (model, tone, length)
+│   ├── chat_config.py      # Ask Flint system prompt template + tunables (model, tone, length)
 │   ├── data/
 │   │   ├── agents.json     # "Agents Built So Far" cards
-│   │   └── news.json       # News/Updates entries
+│   │   ├── news.json       # News/Updates entries
+│   │   └── knowledge.md    # Ask Flint's only source of truth about Tom/services
 │   ├── templates/
 │   │   └── index.html      # The single-page site
 │   └── static/
@@ -52,12 +53,21 @@ Open [app/data/news.json](app/data/news.json) and append an object:
 
 Entries are shown newest-first automatically (sorted by `date`).
 
-## Adjusting the Ask Flint chat widget
+## Editing what Ask Flint knows
 
-Everything the chatbot is allowed to talk about, its tone, and its contact-capture
-behaviour lives in one place: [app/chat_config.py](app/chat_config.py). Edit
-`SYSTEM_PROMPT`, `MODEL`, `MAX_TOKENS`, or `TEMPERATURE` there — no other code needs
-to change.
+Ask Flint only answers from [app/data/knowledge.md](app/data/knowledge.md) — it will
+not use the model's general knowledge about Tom or Flint Agentic. To teach it
+something new (career details, a new FAQ, a service update), just edit that file
+and push; no code changes needed.
+
+If a visitor asks something outside the knowledge base, Ask Flint politely says so
+and asks for their name and email instead of guessing — it never invents an answer.
+
+## Adjusting the Ask Flint chat widget's tone or behaviour
+
+Everything else about the chatbot — its tone, model, and contact-capture phrasing —
+lives in [app/chat_config.py](app/chat_config.py). Edit `SYSTEM_PROMPT_TEMPLATE`,
+`MODEL`, `MAX_TOKENS`, or `TEMPERATURE` there — no other code needs to change.
 
 ## Local development
 
