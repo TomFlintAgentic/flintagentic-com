@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pydantic import BaseModel
 
-from .chat_config import MAX_TOKENS, MODEL, SYSTEM_PROMPT, TEMPERATURE
+from .chat_config import MAX_TOKENS, MODEL, TEMPERATURE, build_system_prompt
 
 load_dotenv()
 
@@ -49,6 +49,10 @@ def load_json(filename: str):
         return json.load(f)
 
 
+def load_text(filename: str) -> str:
+    return (BASE_DIR / "data" / filename).read_text(encoding="utf-8")
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     news = sorted(load_json("news.json"), key=lambda item: item["date"], reverse=True)
@@ -80,7 +84,7 @@ def chat(payload: ChatRequest):
         model=MODEL,
         max_tokens=MAX_TOKENS,
         temperature=TEMPERATURE,
-        system=SYSTEM_PROMPT,
+        system=build_system_prompt(load_text("knowledge.md")),
         messages=messages,
     )
     return {"reply": response.content[0].text}
