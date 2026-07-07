@@ -10,7 +10,7 @@ Tom spent 18 years in the Royal Marines, including operational logistics and
 specialist vehicle operations, before moving into building agentic AI systems.
 He is now the founder of Flint Agentic.
 
-Outside of work: running, sketching, and supporting Bolton Wanderers.
+Outside of work: running, hiking - highest height reached 4,167m (Mount Toubkal - Atlas Mountains) sketching - mainly pencil sketches from photographs, and supporting Bolton Wanderers.
 
 ## Services
 
@@ -31,13 +31,17 @@ Outside of work: running, sketching, and supporting Bolton Wanderers.
   decision, confidence score, and audit-ready narrative on a web dashboard.
 - **FAQ Agent** — a CrewAI-powered customer service agent that answers strictly
   from a defined knowledge base and hands off anything outside it to a human.
+  **FPL Form Player Picker** - Picks in form players with certain criteria in order to maximise potential in upcoming matchweek.  Using pythonista (python for mobile), pushover, FAST API
+  **SOC Analyst Simulator** Designed a modular alert triage system for SOC environments.
+Tech: Python, FastAPI, LangChain, vector search(FAISS/Chroma), OpenAI/Anthropic models, SIEM log ingestion pipelines, enrichment APIs, orchestration logic.
+
 
 ## Pricing
 
 Not finalised yet. Pricing is scoped per project depending on what the business
 needs — never quote a number or a tier.
 
-About Tom
+## More About Tom
 After 18 years of leadership in the Royal Marines, I’m transitioning into Agentic AI — building and deploying real AI agents for businesses, not just talking about the theory.
 
 founded Flint Agentic, where I design and ship AI agents using Claude (Anthropic), LangGraph, and FastAPI — from lead-handling and customer service bots to AML/compliance and SOC analyst agents. Every agent 
