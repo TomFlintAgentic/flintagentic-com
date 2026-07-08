@@ -77,13 +77,7 @@ h3 {
   height: 6rem;
   border-radius: 100%;
   border: 2px solid var(--ring-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.5em;
-  color: var(--text-white);
+  object-fit: cover;
 }
 
 .hero h1 {
