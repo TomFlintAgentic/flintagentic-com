@@ -13,5 +13,15 @@
     "name": "FAQ Agent",
     "repo_url": "https://github.com/TomFlintAgentic/faq",
     "description": "A CrewAI-powered customer service agent that answers strictly from a defined knowledge base and hands off anything outside it to a human, so it never invents an answer."
+  },
+  {
+    "name": "SOC Analyst Agent",
+    "repo_url": "https://github.com/TomFlintAgentic/soc-analyst-agent",
+    "description": "A modular alert-triage pipeline for SOC teams. Groups raw alerts into incidents, enriches them with IP reputation and user context, then has Claude classify severity, explain its reasoning, and recommend concrete next actions."
+  },
+  {
+    "name": "FPL Form Player Picker",
+    "repo_url": "https://github.com/TomFlintAgentic/fpl-form-picker",
+    "description": "Checks the Fantasy Premier League API each gameweek, finds in-form players facing one of the bottom three teams, and pushes a ranked shortlist straight to your phone before the transfer deadline."
   }
 ]
