@@ -1,6 +1,6 @@
 # Flint Agentic — flintagentic.com
 
-The personal site for Flint Agentic: hero, About Me, an "Agents Built So Far" gallery,
+The personal site for Flint Agentic: hero, About Me, an "A Few Agents I've Built" gallery,
 an "Ask Flint" chat assistant, and a News/Updates feed. Built with FastAPI + Jinja2,
 deployed to Render — same pattern as [lead-agent](https://github.com/TomFlintAgentic/lead-agent).
 
@@ -12,7 +12,7 @@ flintagentic-com/
 │   ├── main.py            # FastAPI app — routes, page rendering, /api/chat
 │   ├── chat_config.py      # Ask Flint system prompt template + tunables (model, tone, length)
 │   ├── data/
-│   │   ├── agents.json     # "Agents Built So Far" cards
+│   │   ├── agents.json     # "A Few Agents I've Built" cards
 │   │   ├── news.json       # News/Updates entries
 │   │   └── knowledge.md    # Ask Flint's only source of truth about Tom/services
 │   ├── templates/
