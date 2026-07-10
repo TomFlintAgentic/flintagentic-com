@@ -1,7 +1,10 @@
 import json
+import os
+import re
 from pathlib import Path
 
 import anthropic
+import requests
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
@@ -14,6 +17,10 @@ from .chat_config import MAX_TOKENS, MODEL, TEMPERATURE, build_system_prompt
 load_dotenv()
 
 app = FastAPI()
+
+PUSHOVER_API_TOKEN = os.getenv("PUSHOVER_API_TOKEN")
+PUSHOVER_USER_KEY = os.getenv("PUSHOVER_USER_KEY")
+EMAIL_PATTERN = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 
 BASE_DIR = Path(__file__).resolve().parent
 jinja_env = Environment(
@@ -75,10 +82,33 @@ class ChatRequest(BaseModel):
     history: list[ChatMessage] = []
 
 
+def notify_new_contact(email: str, payload: "ChatRequest") -> None:
+    user_messages = [m.content for m in payload.history if m.role == "user"]
+    user_messages.append(payload.message)
+    transcript = "\n".join(user_messages)[-500:]
+    requests.post(
+        "https://api.pushover.net/1/messages.json",
+        data={
+            "token": PUSHOVER_API_TOKEN,
+            "user": PUSHOVER_USER_KEY,
+            "title": "Ask Flint: new contact left",
+            "message": f"{email}\n\nWhat they asked about:\n{transcript}",
+        },
+        timeout=5,
+    )
+
+
 @app.post("/api/chat")
 def chat(payload: ChatRequest):
     messages = [{"role": m.role, "content": m.content} for m in payload.history]
     messages.append({"role": "user", "content": payload.message})
+
+    email_match = EMAIL_PATTERN.search(payload.message)
+    if email_match:
+        try:
+            notify_new_contact(email_match.group(0), payload)
+        except Exception:
+            pass
 
     response = ai_client.messages.create(
         model=MODEL,
