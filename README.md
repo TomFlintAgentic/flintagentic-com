@@ -104,4 +104,4 @@ Visit `http://localhost:8000`.
 
 ## Author
 
-Built by Tom Flint — Flint Agentic.
+Built by Tom McCullough — Flint Agentic.
