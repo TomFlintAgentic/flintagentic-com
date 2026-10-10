@@ -12,7 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pydantic import BaseModel
 
-from .chat_config import MAX_TOKENS, MODEL, TEMPERATURE, build_system_prompt
+from .chat_config import MAX_TOKENS, MODEL, build_system_prompt
 
 load_dotenv()
 
@@ -113,7 +113,6 @@ def chat(payload: ChatRequest):
     response = ai_client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
-        temperature=TEMPERATURE,
         system=build_system_prompt(load_text("knowledge.md")),
         messages=messages,
     )
