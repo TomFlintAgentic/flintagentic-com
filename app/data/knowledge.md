@@ -15,97 +15,122 @@ Outside of work: running, hiking - highest height reached 4,167m (Mount Toubkal 
 ## Services
 
 - **Lead Capture** — automatically collecting and qualifying enquiries from a
-  business's website, social media, or ads, 24/7, no staff needed.
-- **Enquiry & Call Handling** — instant AI responses so businesses never lose a
-  customer to a missed call or slow reply.
-- **Custom AI Automation** — bespoke agentic workflows that cut out repetitive
-  tasks so a business can focus on what needs a human touch.
-
-## Agents built so far
-
-- **Lead Handler** — captures and spam-filters enquiries from the
-  flintagentic.co.uk contact form, logs genuine leads, and pushes an instant
-  notification the moment a real prospect gets in touch.
-- **Sentinel AML** — an agentic anti-money-laundering investigator: runs OFAC
-  sanctions screening and Companies House lookups, then produces a structured
-  decision, confidence score, and audit-ready narrative on a web dashboard.
-- **FAQ Agent** — a CrewAI-powered customer service agent that answers strictly
-  from a defined knowledge base and hands off anything outside it to a human.
-  **FPL Form Player Picker** - Picks in form players with certain criteria in order to maximise potential in upcoming matchweek.  Using pythonista (python for mobile), pushover, FAST API
-  **SOC Analyst Simulator** Designed a modular alert triage system for SOC environments.
-Tech: Python, FastAPI, LangChain, vector search(FAISS/Chroma), OpenAI/Anthropic models, SIEM log ingestion pipelines, enrichment APIs, orchestration logic.
-
-
-## Pricing
-
-Not finalised yet. Pricing is scoped per project depending on what the business
-needs — never quote a number or a tier.
-
-## More About Tom
-After 18 years of leadership in the Royal Marines, I’m transitioning into Agentic AI — building and deploying real AI agents for businesses, not just talking about the theory.
-
-founded Flint Agentic, where I design and ship AI agents using Claude (Anthropic), LangGraph, and FastAPI — from lead-handling and customer service bots to AML/compliance and SOC analyst agents. Every agent 
-build gets pushed live to GitHub as part of a growing portfolio, alongside a DataCamp Data Analyst certification and hands-on fluency in Python, prompt engineering, and workflow automation tools like n8n.
-
-My Royal Marines background in procurement, supply chain, and team leadership gives me the discipline to turn messy real-world processes into structured, automatable systems — and 18 years of delivering under pressure means I don’t just pilot ideas, I drive adoption until they stick.
-
-He's actively seeking Agentic AI, AI Operator, or AI Enablement roles where he can embed with teams, build practical AI-driven solutions, and measure real impact — time saved, quality improved, adoption achieved.
-
-Military Career
-
-Royal Marines
-
-Full-time · 7 yrs 2 mos
-
-On-site
-
-Supply Chain Office Manager
-
-Jun 2019 - Present · 7 yrs 2 mos
-
-Dorset, England, United Kingdom
-
-• Led end-to-end supply chain operations for a £1M+ equipment inventory, achieving 100% compliance with Defence Logistics Framework standards 
-• Spearheaded process optimisation initiative that reduced weekly inventory check time by 40% through data-driven categorisation and prioritisation 
-• Managed diverse team of 8 military and civilian personnel, maintaining operational excellence during critical annual audits 
-• Automated repetitive administration tasks through workflows with Microsoft Power Automate.
-• Orchestrated urgent operational equipment deployments within short deadlines, coordinating multiple departments while maintaining 100% accountability
-
-Equipment Entitlement Manager
-
-Jun 2019 - Jul 2023 · 4 yrs 2 mos
-
-• Responsible for scaling and managing stock levels of high value equipment, ensuring operational readiness and accountability.  
-• Experienced in coordinating repair and replacement processes through the reverse supply chain, maintaining efficiency and cost effectiveness.  
-• Strong communicator with proven ability to liase with technicians, engineers and suppliers to facilitate timely diagnostics and repairs, while maintaining accurate records and ensuring asset integrity throughout the lifecycle.
-• Manage account worth over £2m.
-
-
-Royal Marines
-
-Full-time · 9 yrs 8 mos
-
-Viking Crewman
-
-Dec 2011 - Mar 2019 · 7 yrs 4 mos
-
-Dorset, England, United Kingdom · On-site
-
-• Led tactical deployments for fleet of 8 armoured vehicles valued at £8M+, achieving 100% mission completion rate 
-• Optimised fleet maintenance protocols, reducing vehicle downtime by 25% and maintaining 95% operational readiness 
-• Commanded high-profile security operations at London 2012 Olympics, coordinating with multi-agency teams and managing public relations 
-• Developed and implemented strategic deployment plans, resulting in 30% improvement in mission efficiency 
-• Supervised technical maintenance programme for department-wide fleet, ensuring compliance with military safety standards… more
-
- Team Leadership, Communication and +4 skills
-
-General Duties
-
-Aug 2009 - Nov 2011 · 2 yrs 4 mos
-
-Helensburgh, Scotland, United Kingdom
-
-• Executed high-stakes security operations protecting critical national infrastructure valued at £1B+
-• Maintained 100% readiness rating while operating under 5-minute response protocols
-• Coordinated with multi-agency teams to implement comprehensive security measures
-• Led rapid response drills and maintained detailed incident documentation
+-   business's website, social media, or ads, 24/7, no staff needed.
+-   - **Enquiry & Call Handling** — instant AI responses so businesses never lose a
+    -   customer to a missed call or slow reply.
+    -   - **Custom AI Automation** — bespoke agentic workflows that cut out repetitive
+        -   tasks so a business can focus on what needs a human touch.
+     
+        -   ## Agents built so far
+     
+        -   - **Lead Handler** — captures and spam-filters enquiries from the
+            -   flintagentic.co.uk contact form, logs genuine leads, and pushes an instant
+            -     notification the moment a real prospect gets in touch.
+            - - **Sentinel AML** — an agentic anti-money-laundering investigator: runs OFAC
+              -   sanctions screening and Companies House lookups, then produces a structured
+              -     decision, confidence score, and audit-ready narrative on a web dashboard.
+              - - **FAQ Agent** — a CrewAI-powered customer service agent that answers strictly
+                -   from a defined knowledge base and hands off anything outside it to a human.
+                -   - **FPL Form Player Picker** — picks in-form players with certain criteria in
+                    -   order to maximise potential in the upcoming matchweek. Built with Pythonista
+                    -     (Python for mobile), Pushover, and FastAPI.
+                    - - **SOC Analyst Agent** — a modular alert-triage pipeline for SOC teams,
+                      -   rebuilt on the OpenAI Agents SDK. Groups raw alerts into incidents, enriches
+                      -     them with IP reputation and threat-intel context, then classifies severity,
+                      -   explains its reasoning, and proposes containment actions that require
+                      -     explicit human approval. Talking points for this one:
+                      -   - OpenAI Agents SDK (distinct from the existing Anthropic Claude / LangGraph
+                          -     stack) — shows multi-model/platform literacy, not locked into one vendor.
+                          -   - Pydantic structured output validation (the `Alert`/`SOCReport` models) — a
+                              -     concrete "builds reliable, typed agent outputs" talking point.
+                              -   - SOC/security triage domain knowledge — alert ingestion, synthetic data
+                                  -     handling, human-in-the-loop review by design (no autonomous containment
+                                  -     actions).
+                                  -   - Test-driven agent development — a mocked test suite covering malformed
+                                      -     input, API failures, and forced human review (reassuring for
+                                      -     defence/SC-cleared clients who ask about reliability and safety rails).
+                                      -   - Responsible-AI framing: the model is explicitly scoped to "use supplied
+                                          -     evidence only, disclose no external lookup occurred" — a trust/governance
+                                          -     point for security-conscious SME or defence clients.
+                                       
+                                          - ## Positioning & breadth
+                                       
+                                          - - Multi-framework fluency: LangGraph (Lead Handler), CrewAI (FAQ Agent), and
+                                            -   the OpenAI Agents SDK (SOC Analyst Agent) — not a one-tool operator.
+                                            -   - Security/compliance-adjacent agent work: Sentinel AML (OFAC/Companies House
+                                                -   screening) and the SOC Analyst Agent together make a credible "security &
+                                                -     compliance automation" sub-specialism, which pairs naturally with SC
+                                                -   clearance for defence-sector positioning.
+                                             
+                                                -   ## Pricing
+                                             
+                                                -   Not finalised yet. Pricing is scoped per project depending on what the business
+                                                -   needs — never quote a number or a tier.
+                                             
+                                                -   ## More About Tom
+                                                -   After 18 years of leadership in the Royal Marines, I'm transitioning into Agentic AI — building and deploying real AI agents for businesses, not just talking about the theory.
+                                             
+                                                -   founded Flint Agentic, where I design and ship AI agents using Claude (Anthropic), LangGraph, and FastAPI — from lead-handling and customer service bots to AML/compliance and SOC analyst agents. Every agent
+                                                -   build gets pushed live to GitHub as part of a growing portfolio, alongside a DataCamp Data Analyst certification and hands-on fluency in Python, prompt engineering, and workflow automation tools like n8n.
+                                             
+                                                -   My Royal Marines background in procurement, supply chain, and team leadership gives me the discipline to turn messy real-world processes into structured, automatable systems — and 18 years of delivering under pressure means I don't just pilot ideas, I drive adoption until they stick.
+                                             
+                                                -   He's actively seeking Agentic AI, AI Operator, or AI Enablement roles where he can embed with teams, build practical AI-driven solutions, and measure real impact — time saved, quality improved, adoption achieved.
+                                             
+                                                -   Military Career
+                                             
+                                                -   Royal Marines
+                                             
+                                                -   Full-time · 7 yrs 2 mos
+                                             
+                                                -   On-site
+                                             
+                                                -   Supply Chain Office Manager
+                                             
+                                                -   Jun 2019 - Present · 7 yrs 2 mos
+                                             
+                                                -   Dorset, England, United Kingdom
+                                             
+                                                -   • Led end-to-end supply chain operations for a £1M+ equipment inventory, achieving 100% compliance with Defence Logistics Framework standards
+                                                -   • Spearheaded process optimisation initiative that reduced weekly inventory check time by 40% through data-driven categorisation and prioritisation
+                                                -   • Managed diverse team of 8 military and civilian personnel, maintaining operational excellence during critical annual audits
+                                                -   • Automated repetitive administration tasks through workflows with Microsoft Power Automate.
+                                                -   • Orchestrated urgent operational equipment deployments within short deadlines, coordinating multiple departments while maintaining 100% accountability
+                                             
+                                                -   Equipment Entitlement Manager
+                                             
+                                                -   Jun 2019 - Jul 2023 · 4 yrs 2 mos
+                                             
+                                                -   • Responsible for scaling and managing stock levels of high value equipment, ensuring operational readiness and accountability.
+                                                -   • Experienced in coordinating repair and replacement processes through the reverse supply chain, maintaining efficiency and cost effectiveness.
+                                                -   • Strong communicator with proven ability to liase with technicians, engineers and suppliers to facilitate timely diagnostics and repairs, while maintaining accurate records and ensuring asset integrity throughout the lifecycle.
+                                                -   • Manage account worth over £2m.
+                                             
+                                            -   Royal Marines
+                                           
+                                            -   Full-time · 9 yrs 8 mos
+                                           
+                                            -   Viking Crewman
+                                           
+                                            -   Dec 2011 - Mar 2019 · 7 yrs 4 mos
+                                           
+                                            -   Dorset, England, United Kingdom · On-site
+                                           
+                                            -   • Led tactical deployments for fleet of 8 armoured vehicles valued at £8M+, achieving 100% mission completion rate
+                                            -   • Optimised fleet maintenance protocols, reducing vehicle downtime by 25% and maintaining 95% operational readiness
+                                            -   • Commanded high-profile security operations at London 2012 Olympics, coordinating with multi-agency teams and managing public relations
+                                            -   • Developed and implemented strategic deployment plans, resulting in 30% improvement in mission efficiency
+                                            -   • Supervised technical maintenance programme for department-wide fleet, ensuring compliance with military safety standards… more
+                                           
+                                            -    Team Leadership, Communication and +4 skills
+                                           
+                                            -    General Duties
+                                           
+                                            -    Aug 2009 - Nov 2011 · 2 yrs 4 mos
+                                           
+                                            -    Helensburgh, Scotland, United Kingdom
+                                           
+                                            -    • Executed high-stakes security operations protecting critical national infrastructure valued at £1B+
+                                            -    • Maintained 100% readiness rating while operating under 5-minute response protocols
+                                            -    • Coordinated with multi-agency teams to implement comprehensive security measures
+                                            -    • Led rapid response drills and maintained detailed incident documentation
